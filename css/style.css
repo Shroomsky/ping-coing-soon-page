@@ -1,0 +1,244 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  min-height: 100vh;
+  font-size: 20px;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(225deg, 62%, 95%);
+  font-family: "Libre Franklin", sans-serif;
+}
+
+a,
+i,
+button {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  color: #fff;
+}
+a :visited,
+i :visited,
+button :visited {
+  color: #fff;
+}
+
+.wrapper {
+  flex: 1 0 auto;
+  max-width: 350px;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+header {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+header h1 {
+  padding-top: 40px;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: hsl(0deg, 0%, 59%);
+}
+header h1 span {
+  font-weight: 700;
+  color: hsl(209deg, 33%, 12%);
+}
+
+main {
+  text-align: center;
+}
+main p {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: hsl(209deg, 33%, 12%);
+  padding-bottom: 30px;
+}
+main .input {
+  padding: 0 25px;
+}
+main input {
+  border: 1.8px solid hsl(223deg, 87%, 63%);
+  background-color: hsl(225deg, 62%, 95%);
+  color: hsl(223deg, 87%, 63%);
+  border-radius: 50px;
+  width: 100%;
+  padding: 10px;
+  padding: 8px 1.5rem;
+  font-size: 0.7rem;
+  filter: opacity(0.5) saturate(0.5);
+  margin-bottom: 5px;
+}
+main button {
+  border-radius: 50px;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: hsl(223deg, 87%, 63%);
+  font-size: 0.7rem;
+  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.1);
+  margin: 10px 0;
+  padding: 10px 0;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter 0.3s;
+}
+main button:hover {
+  filter: opacity(0.7) saturate(0.9);
+}
+main img {
+  padding: 30px 0;
+}
+main .error {
+  color: hsl(354deg, 100%, 66%);
+  filter: brightness(0.8);
+  font-style: italic;
+  font-size: 0.6rem;
+  font-weight: 600;
+}
+
+.pageFooter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 90px;
+}
+.pageFooter .socialLinks {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+.pageFooter .socialLinks i {
+  padding: 8px;
+  font-size: 1em;
+  width: 1.8em;
+  height: 1.8em;
+  text-align: center;
+  vertical-align: middle;
+  color: hsl(223deg, 87%, 63%);
+  border-radius: 50%;
+  border: 1px solid hsl(0deg, 0%, 59%);
+  filter: opacity(0.8);
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+.pageFooter .socialLinks i:hover {
+  color: #fff;
+  background-color: hsl(223deg, 87%, 63%);
+  border-color: hsl(223deg, 87%, 63%);
+}
+.pageFooter .copyright {
+  color: hsl(0deg, 0%, 59%);
+  font-size: 0.6rem;
+}
+
+.footer {
+  padding: 0.5rem;
+  width: 100%;
+  color: #fff;
+  background-color: hsl(0deg, 0%, 59%);
+  font-size: 0.7rem;
+}
+.footer .attribution {
+  text-align: center;
+}
+.footer .attribution a {
+  text-decoration: none;
+  color: #fff;
+}
+.footer .attribution a:visited {
+  color: #fff;
+}
+
+@media (min-width: 1200px) {
+  .wrapper {
+    min-width: 800px;
+  }
+  .input {
+    display: grid;
+    grid-template-rows: 50px 20px;
+    grid-template-columns: 450px 300px;
+    gap: 10px;
+  }
+  .input.input-area {
+    width: 60%;
+    margin-bottom: 0;
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  .input button {
+    height: 41px;
+    margin: 0;
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+  .input.error {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  .input img {
+    padding: 50px;
+  }
+  .error {
+    text-align: left;
+    padding-left: 20px;
+  }
+}/*# sourceMappingURL=style.css.map */

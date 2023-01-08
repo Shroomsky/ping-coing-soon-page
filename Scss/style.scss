@@ -1,0 +1,246 @@
+@use "./colors" as colors;
+@use "./mixins" as mixins;
+
+//============CSS Reset==========//
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	min-height: 100vh;
+	font-size: 20px;
+}
+body {
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+}
+#root,
+#__next {
+	isolation: isolate;
+}
+ul,
+ol {
+	list-style: none;
+}
+//============CSS Reset==========//
+
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: colors.$BG_main;
+	font-family: "Libre Franklin", sans-serif;
+}
+a,
+i,
+button {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	color: #fff;
+	& :visited {
+		color: #fff;
+	}
+}
+
+//=================Wrapper=============//
+.wrapper {
+	flex: 1 0 auto;
+	max-width: 350px;
+	padding: 20px 0;
+	@include mixins.flex_col_aic;
+	gap: 10px;
+}
+
+//=================Wrapper=============//
+
+//=================Header=============//
+
+header {
+	margin-top: 50px;
+	@include mixins.flex_col_aic;
+	justify-content: flex-start;
+	& h1 {
+		padding-top: 40px;
+		font-size: 1.5rem;
+		font-weight: 300;
+		color: colors.$Gray;
+		& span {
+			font-weight: 700;
+			color: colors.$Very_Dark_Blue;
+		}
+	}
+}
+//=================Header=============//
+
+//=================Main=============//
+main {
+	text-align: center;
+	& p {
+		font-size: 0.8rem;
+		font-weight: 300;
+		color: colors.$Very_Dark_Blue;
+		padding-bottom: 30px;
+	}
+	& .input {
+		padding: 0 25px;
+	}
+	& input {
+		border: 1.8px solid colors.$Blue;
+		background-color: colors.$BG_main;
+		color: colors.$Blue;
+		@include mixins.bar;
+		padding: 8px 1.5rem;
+		font-size: 0.7rem;
+		filter: opacity(0.5) saturate(0.5);
+		margin-bottom: 5px;
+	}
+	& button {
+		@include mixins.bar;
+		border: none;
+		background-color: colors.$Blue;
+		font-size: 0.7rem;
+		box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.1);
+		margin: 10px 0;
+		padding: 10px 0;
+		font-weight: 600;
+		cursor: pointer;
+		transition: filter 0.3s;
+		&:hover {
+			filter: opacity(0.7) saturate(0.9);
+		}
+	}
+	& img {
+		padding: 30px 0;
+	}
+	& .error {
+		color: colors.$Light_Red;
+		filter: brightness(0.8);
+		font-style: italic;
+		font-size: 0.6rem;
+		font-weight: 600;
+	}
+}
+
+//=================Main=============//
+
+//=================PageFooter=============//
+
+.pageFooter {
+	@include mixins.flex_col_aic;
+	justify-content: space-between;
+	height: 90px;
+	& .socialLinks {
+		@include mixins.flex_row_aic;
+		gap: 20px;
+		i {
+			padding: 8px;
+			font-size: 1em;
+			width: 1.8em;
+			height: 1.8em;
+			text-align: center;
+			vertical-align: middle;
+			color: colors.$Blue;
+			border-radius: 50%;
+			border: 1px solid colors.$Gray;
+			filter: opacity(0.8);
+			transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+			&:hover {
+				color: #fff;
+				background-color: colors.$Blue;
+				border-color: colors.$Blue;
+			}
+		}
+	}
+	& .copyright {
+		color: colors.$Gray;
+		font-size: 0.6rem;
+	}
+}
+//=================PageFooter=============//
+
+//=====================Footer================//
+.footer {
+	padding: 0.5rem;
+	width: 100%;
+	color: #fff;
+	background-color: colors.$Gray;
+	font-size: 0.7rem;
+	& .attribution {
+		text-align: center;
+		& a {
+			text-decoration: none;
+			color: #fff;
+			&:visited {
+				color: #fff;
+			}
+		}
+	}
+}
+//=====================Footer================//
+
+//=====================Media================//
+
+@media (min-width: 1200px) {
+	.wrapper {
+		min-width: 800px;
+	}
+	.input {
+		display: grid;
+		grid-template-rows: 50px 20px;
+		grid-template-columns: 450px 300px;
+		gap: 10px;
+		&.input-area {
+			width: 60%;
+			margin-bottom: 0;
+			grid-column: 1/2;
+			grid-row: 1/2;
+		}
+		& button {
+			height: 41px;
+			margin: 0;
+			grid-column: 2/3;
+			grid-row: 1/2;
+		}
+		&.error {
+			grid-column: 1/2;
+			grid-row: 2/3;
+		}
+		& img {
+			padding: 50px;
+		}
+	}
+	.error {
+		text-align: left;
+		padding-left: 20px;
+	}
+}
+
+//=====================Media================//

@@ -1,0 +1,31 @@
+@mixin flex_col_aic_jcc {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+@mixin flex_col_aic {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+@mixin flex_row_aic_jcc {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+@mixin flex_row_aic {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+@mixin bar {
+	border-radius: 50px;
+	width: 100%;
+	padding: 10px;
+}
+@mixin bars_desktop {
+	width: 50%;
+}
