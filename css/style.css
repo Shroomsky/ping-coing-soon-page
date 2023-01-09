@@ -101,15 +101,20 @@ header h1 span {
   font-weight: 700;
   color: hsl(209deg, 33%, 12%);
 }
-
-main {
-  text-align: center;
-}
-main p {
+header h1 p {
   font-size: 0.8rem;
   font-weight: 300;
   color: hsl(209deg, 33%, 12%);
   padding-bottom: 30px;
+}
+
+main {
+  text-align: center;
+}
+main label {
+  visibility: hidden;
+  display: block;
+  height: 0;
 }
 main .input {
   padding: 0 25px;

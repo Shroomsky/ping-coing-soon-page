@@ -1,12 +1,13 @@
 const input = document.querySelector("input");
-const NotifyBtn = document.querySelector("button");
+const form = document.querySelector("form");
 const error = document.querySelector(".error");
 const pError = document.createElement("p");
 
 const reg =
 	/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
-const btnFn = () => {
+const submitFn = (e) => {
+	e.preventDefault();
 	pError.innerHTML = "Please provide a valid email address";
 	pError.classList.add("error");
 
@@ -17,7 +18,7 @@ const btnFn = () => {
 		pError.innerText = "";
 		pError.innerHTML = "We will let You know!";
 		pError.style.color = `royalblue`;
-		pRemove();
+		setTimeout((function(){pError.remove()}), 2000);
 	} else {
 		input.after(pError);
 		input.style.borderColor = `hsl(354deg, 100%, 66%)`;
@@ -25,10 +26,4 @@ const btnFn = () => {
 	}
 };
 
-const pRemove = () => {
-	setTimeout(() => {
-		pError.remove();
-	}, "2500");
-};
-
-NotifyBtn.addEventListener("click", btnFn);
+document.addEventListener("submit", submitFn);

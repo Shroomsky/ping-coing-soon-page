@@ -96,6 +96,12 @@ header {
 			font-weight: 700;
 			color: colors.$Very_Dark_Blue;
 		}
+		& p {
+			font-size: 0.8rem;
+			font-weight: 300;
+			color: colors.$Very_Dark_Blue;
+			padding-bottom: 30px;
+		}
 	}
 }
 //=================Header=============//
@@ -103,14 +109,14 @@ header {
 //=================Main=============//
 main {
 	text-align: center;
-	& p {
-		font-size: 0.8rem;
-		font-weight: 300;
-		color: colors.$Very_Dark_Blue;
-		padding-bottom: 30px;
+	& label {
+		visibility: hidden;
+		display: block;
+		height: 0;
 	}
 	& .input {
 		padding: 0 25px;
+		// visibility: hidden;
 	}
 	& input {
 		border: 1.8px solid colors.$Blue;
